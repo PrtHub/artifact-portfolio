@@ -1,0 +1,17 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "never"
+    },
+    "editor.formatOnSave": true,
+    "tailwindCSS.experimental.classRegex": [
+      ["@apply ([^;]*)", "[\\w-:]+"],
+      ["@utility ([^{]*)", "[\\w-:]+"]
+    ],
+    "tailwindCSS.includeLanguages": {
+      "css": "css"
+    },
+    "css.validate": false,
+    "tailwindCSS.validate": true,
+    "tailwindCSS.experimental.configFile": null
+  }
