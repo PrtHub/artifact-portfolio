@@ -75,7 +75,7 @@ export function ServicesSection() {
             glowOpacity={0.15}
             className="p-6 rounded-sm border border-gray-200/80 dark:border-gray-800/50 bg-white dark:bg-[#0a0a0a] hover:border-gray-900/30 dark:hover:border-emerald-500/30 transition-all duration-300"
           >
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col xs:flex-row items-start gap-4">
               <div className="flex-shrink-0 mt-1">{service.icon}</div>
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold text-[#08090a] dark:text-white">

@@ -76,7 +76,7 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-2 w-full">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-1 gap-2 w-full">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

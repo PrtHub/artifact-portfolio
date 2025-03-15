@@ -126,9 +126,16 @@
 }
 
 @theme {
+  --breakpoint-xs: 600px;
+  --breakpoint-sm: 650px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
   --animate-appear: appear 1s ease-in-out;
   --animate-shimmer: shimmer 2s linear infinite;
   --animate-shine: shine 3s infinite;
+  --animate-slow-spin: slow-spin 120s linear infinite;
 
   @keyframes appear {
     from {
@@ -154,6 +161,15 @@
     }
     100% {
       transform: translateX(100%);
+    }
+  }
+
+  @keyframes slow-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }

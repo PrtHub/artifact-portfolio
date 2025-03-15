@@ -4,6 +4,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { Menu, X } from "lucide-react";
+import MobileNav from "./mobile-nav";
 
 interface NavbarProps {
   developerInitial?: string;
@@ -35,6 +37,7 @@ export function Navbar({
   const [activeSection, setActiveSection] = useState("about");
   const [scrolled, setScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,76 +115,94 @@ export function Navbar({
   };
 
   return (
-    <nav
-      className={cn(
-        "fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-full max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
-        scrolled
-          ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg"
-          : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/30"
-      )}
-      onMouseMove={handleMouseMove}
-    >
-      {/* Shine Effect */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-30"
-        style={{
-          background:
-            theme === "dark"
-              ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 197, 94, 0.15), transparent 40%)`
-              : `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(8, 9, 10, 0.15), transparent 40%)`,
-        }}
-      />
+    <>
+      <nav
+        className={cn(
+          "fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
+          scrolled
+            ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg"
+            : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/30"
+        )}
+        onMouseMove={handleMouseMove}
+      >
+        {/* Shine Effect */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            background:
+              theme === "dark"
+                ? `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 197, 94, 0.15), transparent 40%)`
+                : `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(8, 9, 10, 0.15), transparent 40%)`,
+          }}
+        />
 
-      {/* Subtle Glow Border */}
-      <div className="absolute inset-0 rounded-sm opacity-20 blur-sm">
-        <div className="absolute inset-px rounded-sm border border-emerald-500/20" />
-      </div>
+        {/* Subtle Glow Border */}
+        <div className="absolute inset-0 rounded-sm opacity-20 blur-sm">
+          <div className="absolute inset-px rounded-sm border border-emerald-500/20" />
+        </div>
 
-      <div className="flex-shrink-0 relative">
-        <Link
-          href="#"
-          className="flex items-center justify-center w-9 h-9 rounded-full bg-[#08090a] dark:bg-emerald-600 text-white dark:text-black/70 font-semibold relative overflow-hidden group"
-        >
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-            <div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              style={{ animation: "var(--animate-shine)" }}
-            />
-          </div>
-          {developerInitial}
-        </Link>
-      </div>
-
-      <div className="flex items-center space-x-1">
-        {sections.map((section) => (
+        <div className="flex-shrink-0 relative">
           <Link
-            key={section.id}
-            href={`#${section.id}`}
-            className={cn(
-              "px-3 py-1.5 text-sm rounded-full transition-all duration-300 relative overflow-hidden",
-              activeSection === section.id
-                ? "text-black dark:text-white bg-gray-100 dark:bg-[#191a1a] font-medium"
-                : "text-[#737373] dark:text-[#A1A1AA] hover:text-black dark:hover:text-white"
-            )}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(section.id);
-            }}
+            href="#"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-[#08090a] dark:bg-emerald-600 text-white dark:text-black/70 font-semibold relative overflow-hidden group"
           >
-            {activeSection === section.id && (
-              <div className="absolute inset-0 opacity-20">
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-gradient-to-r from-transparent via-[#08090a]/30 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-emerald-500/30 dark:to-transparent"
-                  )}
-                  style={{ animation: "var(--animate-shine)" }}
-                />
-              </div>
-            )}
-            {section.label}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                style={{ animation: "var(--animate-shine)" }}
+              />
+            </div>
+            {developerInitial}
           </Link>
-        ))}
-      </div>
-    </nav>
+        </div>
+
+        <div className="hidden sm:flex items-center space-x-1">
+          {sections.map((section) => (
+            <Link
+              key={section.id}
+              href={`#${section.id}`}
+              className={cn(
+                "px-3 py-1.5 text-sm rounded-full transition-all duration-300 relative overflow-hidden",
+                activeSection === section.id
+                  ? "text-black dark:text-white bg-gray-100 dark:bg-[#191a1a] font-medium"
+                  : "text-[#737373] dark:text-[#A1A1AA] hover:text-black dark:hover:text-white"
+              )}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(section.id);
+              }}
+            >
+              {activeSection === section.id && (
+                <div className="absolute inset-0 opacity-20">
+                  <div
+                    className={cn(
+                      "absolute inset-0 bg-gradient-to-r from-transparent via-[#08090a]/30 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-emerald-500/30 dark:to-transparent"
+                    )}
+                    style={{ animation: "var(--animate-shine)" }}
+                  />
+                </div>
+              )}
+              {section.label}
+            </Link>
+          ))}
+        </div>
+
+        <button
+          className="sm:hidden relative z-50 w-10 h-10 flex items-center justify-center cursor-pointer"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? (
+            <X className="w-6 h-6 text-[#08090a] dark:text-white transition-transform duration-200 transform rotate-0 hover:rotate-90" />
+          ) : (
+            <Menu className="w-6 h-6 text-[#08090a] dark:text-white transition-transform duration-200 transform hover:scale-110" />
+          )}
+        </button>
+      </nav>
+      <MobileNav
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        sections={sections}
+      />
+    </>
   );
 }

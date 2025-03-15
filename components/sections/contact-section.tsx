@@ -35,87 +35,55 @@ export function ContactSection() {
           className="p-8 rounded-sm border border-gray-200/80 dark:border-gray-800/50 bg-white dark:bg-[#0a0a0a] hover:border-gray-900/30 dark:hover:border-emerald-500/30 transition-all duration-300"
         >
           <div className="max-w-2xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-6">
               <h4 className="text-xl font-medium text-[#08090a] dark:text-white">
                 Ready to start a conversation?
               </h4>
-              <p className="text-[#737373] dark:text-[#A1A1AA] text-sm leading-relaxed">
-                Whether you have an exciting project in mind, want to discuss
-                tech trends, or just want to say hi – I&apos;m always up for a
-                good conversation! Feel free to reach out through any of these
-                platforms or{" "}
+
+              <a
+                href="mailto:pritamfinds@gmail.com"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors"
+              >
+                pritamfinds@gmail.com
+                <Mail className="w-4 h-4 mt-1" />
+              </a>
+
+              <div className="flex items-center justify-center gap-4 pt-4">
                 <a
-                  href="mailto:pritamfinds@gmail.com"
-                  className="text-[#08090a] dark:text-emerald-500 hover:text-[#08090a]/80 dark:hover:text-emerald-400 transition-colors inline-flex items-center gap-1"
+                  href="https://x.com/PritamGhosh010"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
                 >
-                  drop me an mail
-                  <Mail className="w-3 h-3 mt-1" />
+                  <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Twitter className="relative w-5 h-5" />
                 </a>
-              </p>
+
+                <a
+                  href="https://github.com/PrtHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Github className="relative w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/pritam-ghosh-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Linkedin className="relative w-5 h-5" />
+                </a>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <a
-                href="https://x.com/PritamGhosh010"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-6 rounded-sm bg-gray-100 dark:bg-[#191a1a] border border-gray-200/80 dark:border-gray-800/50 hover:border-gray-900/30 dark:hover:border-emerald-500/30 transition-all duration-300"
-              >
-                <div className="p-3 rounded-sm bg-gray-200 dark:bg-[#222] text-[#08090a] dark:text-emerald-500 group-hover:bg-gray-300 dark:group-hover:bg-emerald-500/10 transition-colors">
-                  <Twitter className="w-6 h-6" />
-                </div>
-                <div className="text-center">
-                  <h5 className="font-medium text-[#08090a] dark:text-white">
-                    Twitter/X
-                  </h5>
-                  <p className="text-xs text-[#737373] dark:text-[#A1A1AA] mt-1">
-                    Quick chats & updates
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/PrtHub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-6 rounded-sm bg-gray-100 dark:bg-[#191a1a] border border-gray-200/80 dark:border-gray-800/50 hover:border-gray-900/30 dark:hover:border-emerald-500/30 transition-all duration-300"
-              >
-                <div className="p-3 rounded-sm bg-gray-200 dark:bg-[#222] text-[#08090a] dark:text-emerald-500 group-hover:bg-gray-300 dark:group-hover:bg-emerald-500/10 transition-colors">
-                  <Github className="w-6 h-6" />
-                </div>
-                <div className="text-center">
-                  <h5 className="font-medium text-[#08090a] dark:text-white">
-                    GitHub
-                  </h5>
-                  <p className="text-xs text-[#737373] dark:text-[#A1A1AA] mt-1">
-                    Code & collaboration
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/pritam-ghosh-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-6 rounded-sm bg-gray-100 dark:bg-[#191a1a] border border-gray-200/80 dark:border-gray-800/50 hover:border-gray-900/30 dark:hover:border-emerald-500/30 transition-all duration-300"
-              >
-                <div className="p-3 rounded-sm bg-gray-200 dark:bg-[#222] text-[#08090a] dark:text-emerald-500 group-hover:bg-gray-300 dark:group-hover:bg-emerald-500/10 transition-colors">
-                  <Linkedin className="w-6 h-6" />
-                </div>
-                <div className="text-center">
-                  <h5 className="font-medium text-[#08090a] dark:text-white">
-                    LinkedIn
-                  </h5>
-                  <p className="text-xs text-[#737373] dark:text-[#A1A1AA] mt-1">
-                    Professional network
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="text-center space-y-3">
-              <p className="text-sm text-[#737373] dark:text-[#A1A1AA]">
-                Prefer sending a DM? I typically respond within 1 hour!
+            <div className="text-center">
+              <p className="inline-block px-4 py-2 text-sm text-[#737373] dark:text-[#A1A1AA] bg-gray-50 dark:bg-[#141414] rounded-sm">
+                💬 I typically respond within 1 hour!
               </p>
             </div>
           </div>

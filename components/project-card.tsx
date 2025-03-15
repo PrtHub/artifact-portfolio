@@ -26,8 +26,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       disableScale={true}
       className="flex items-start overflow-hidden rounded-sm border border-gray-200/80 dark:border-gray-800/50 transition-all duration-300 ease-in-out hover:border-gray-900/30 dark:hover:border-emerald-500/30 w-full cursor-pointer group"
     >
-      <div className="flex w-full">
-        <div className="relative h-[240px] w-[40%] overflow-hidden">
+      <div className="flex sm:flex-row flex-col w-full">
+        <div className="relative h-[240px] w-full sm:w-[40%] overflow-hidden">
           {project.imageUrl && (
             <Image
               src={project.imageUrl}
@@ -49,7 +49,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
-        <div className="w-[60%] flex flex-col p-5 space-y-3">
+        <div className="w-full sm:w-[60%] flex flex-col p-5 space-y-3">
           <h3 className="text-xl font-semibold text-[#737373] dark:text-white group-hover:text-[#08090a]/90 dark:group-hover:text-emerald-500/90 duration-300 ease-in-out transition-colors">
             {project.title}
           </h3>

@@ -1,3 +1,5 @@
+"use client";
+
 import HeadingBadge from "@/components/heading-badge";
 import { IconBrandNextjs } from "@tabler/icons-react";
 import { DiRedis } from "react-icons/di";
@@ -28,6 +30,7 @@ import {
 import { FiFigma } from "react-icons/fi";
 import { VscVscode } from "react-icons/vsc";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { useTheme } from "next-themes";
 
 type Skill = {
   name: string;
@@ -102,6 +105,7 @@ const SkillTag = ({ name, icon }: Skill) => {
 };
 
 export function SkillsSection() {
+  const { theme } = useTheme();
   return (
     <section
       id="skills"
@@ -159,7 +163,10 @@ export function SkillsSection() {
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{
-                background: `radial-gradient(circle at center, rgba(8, 9, 10, 0.03) 0%, rgba(8, 9, 10, 0.06) 35%, transparent 70%)`,
+                background:
+                  theme === "dark"
+                    ? `radial-gradient(circle at center, rgba(34, 197, 94, 0.03) 0%, rgba(34, 197, 94, 0.06) 35%, transparent 70%)`
+                    : `radial-gradient(circle at center, rgba(8, 9, 10, 0.03) 0%, rgba(8, 9, 10, 0.06) 35%, transparent 70%)`,
               }}
             />
             <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#08090a]/30 dark:via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 opacity-0 group-hover:opacity-100 transition-all duration-500" />
