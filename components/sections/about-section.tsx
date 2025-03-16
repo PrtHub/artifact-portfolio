@@ -1,5 +1,6 @@
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { User } from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -8,7 +9,7 @@ export function AboutSection() {
       className="w-full pt-10 flex flex-col items-start justify-start gap-y-8"
     >
       <div className="flex flex-col items-start justify-start gap-5">
-        <HeadingBadge title="About Me" />
+        <HeadingBadge title="About Me" icon={<User size={14} />} />
         <div className="space-y-2">
           <h3 className="text-3xl font-semibold">
             Discover My{" "}
@@ -37,9 +38,9 @@ export function AboutSection() {
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               I&apos;m a passionate full-stack developer with a keen eye for
               design and a love for creating seamless user experiences. With
-              over 2+ years of experience in web development, I&apos;ve worked
-              on a variety of projects ranging from small business websites to
-              complex enterprise applications.
+              over 2+ years of experience in full-stack development, I&apos;ve
+              worked on a variety of projects ranging from small business
+              websites to complex enterprise applications.
             </p>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               My approach combines technical expertise with creative
@@ -54,17 +55,19 @@ export function AboutSection() {
               My Journey
             </h4>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
-              My journey in tech began with a curiosity about how websites work.
-              This curiosity led me to pursue a degree in Computer Science,
-              where I discovered my passion for web development. Since then,
-              I&apos;ve been constantly learning and evolving, staying
-              up-to-date with the latest technologies and best practices.
+              My tech journey began with a YouTube video titled &quot;My journey
+              from nothing to Google&quot; that sparked my curiosity. Though I
+              had basic computer science knowledge, software development was new
+              territory. Web development seemed like the perfect entry point,
+              and what started as simple exploration quickly became a passion.
+              Now I&apos;m constantly learning new technologies and building
+              solutions that make a difference.
             </p>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               Throughout my career, I&apos;ve had the opportunity to work with
               amazing teams and clients, each project adding to my skills and
-              experience. I&apos;m particularly proud of my work on [Project
-              Name], where I [specific achievement or contribution].
+              experience. I&apos;m particularly proud of my work on Artifact UI,
+              which is a UI component library.
             </p>
           </div>
 
@@ -74,10 +77,10 @@ export function AboutSection() {
               Beyond Coding
             </h4>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new hiking
-              trails, experimenting with photography, or diving into a good
-              book. I believe that these diverse interests contribute to my
-              creativity and problem-solving abilities as a developer.
+              Away from the keyboard, I enjoy playing and watching cricket,
+              following football matches, and watching movies. My biggest
+              passion is Anime, which inspires my creativity and keeps me
+              entertained.
             </p>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               I&apos;m also passionate about mentoring and sharing knowledge. I

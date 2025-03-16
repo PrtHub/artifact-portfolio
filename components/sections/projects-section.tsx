@@ -1,5 +1,6 @@
 import { ProjectCard } from "@/components/project-card";
 import HeadingBadge from "@/components/heading-badge";
+import { FolderGit2 } from "lucide-react";
 
 type Project = {
   id: string;
@@ -61,7 +62,7 @@ export function ProjectsSection() {
       className="w-full pt-10 flex flex-col items-start justify-start gap-y-10"
     >
       <div className="flex flex-col items-start justify-start gap-5">
-        <HeadingBadge title="Projects" />
+        <HeadingBadge title="Projects" icon={<FolderGit2 size={14} />} />
         <div className="space-y-2">
           <h3 className="text-3xl font-semibold">
             My{" "}

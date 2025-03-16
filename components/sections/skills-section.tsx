@@ -32,6 +32,7 @@ import { FiFigma } from "react-icons/fi";
 import { VscVscode } from "react-icons/vsc";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { useTheme } from "next-themes";
+import { Lightbulb } from "lucide-react";
 
 type Skill = {
   name: string;
@@ -122,7 +123,7 @@ export function SkillsSection() {
       className="w-full pt-10 flex flex-col items-start justify-start gap-y-10"
     >
       <div className="flex flex-col items-start justify-start gap-5">
-        <HeadingBadge title="Skills" />
+        <HeadingBadge title="Skills" icon={<Lightbulb size={14} />} />
         <div className="space-y-2">
           <h3 className="text-3xl font-semibold">
             <span className="text-[#08090a] dark:text-emerald-500">Skills</span>{" "}
@@ -153,7 +154,7 @@ export function SkillsSection() {
       {/* Experience highlights */}
       <div className="w-full mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { value: "5+", label: "Years Experience" },
+          { value: "2+", label: "Years Experience" },
           { value: "20+", label: "Projects" },
           { value: "10+", label: "Clients" },
           { value: "15+", label: "Technologies" },

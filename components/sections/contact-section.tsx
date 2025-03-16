@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
@@ -10,7 +10,7 @@ export function ContactSection() {
       className="w-full py-10 flex flex-col items-start justify-start gap-y-10"
     >
       <div className="flex flex-col items-start justify-start gap-5">
-        <HeadingBadge title="Contact" />
+        <HeadingBadge title="Contact" icon={<MessageSquare size={14} />} />
         <div className="space-y-2">
           <h3 className="text-3xl font-semibold">
             Let&apos;s{" "}

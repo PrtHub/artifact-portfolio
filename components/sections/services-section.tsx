@@ -1,6 +1,12 @@
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { MonitorIcon, CodeIcon, LayoutIcon, ServerIcon } from "lucide-react";
+import {
+  MonitorIcon,
+  CodeIcon,
+  LayoutIcon,
+  ServerIcon,
+  Wrench,
+} from "lucide-react";
 
 type Service = {
   title: string;
@@ -48,7 +54,7 @@ export function ServicesSection() {
       className="w-full pt-10 flex flex-col items-start justify-start gap-y-10"
     >
       <div className="flex flex-col items-start justify-start gap-5">
-        <HeadingBadge title="Services" />
+        <HeadingBadge title="Services" icon={<Wrench size={14} />} />
         <div className="space-y-2">
           <h3 className="text-3xl font-semibold">
             <span className="text-[#08090a] dark:text-emerald-500">

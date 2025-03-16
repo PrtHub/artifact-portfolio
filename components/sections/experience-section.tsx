@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { Building2, Calendar, ChevronRight } from "lucide-react";
+import { Building2, Calendar, ChevronRight, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Experience = {
@@ -22,8 +22,9 @@ const experiences: Experience[] = [
     position: "Frontend Developer",
     duration: "Nov 2024 - Present",
     description: [
-      "Developed and maintained the frontend of a high-performance Short Content Creation platform using React and TypeScript, resulting in a 40% increase in user engagement",
-      "Collaborated with UX designers to implement responsive and accessible user interfaces",
+      "Developed and maintained the frontend of Clipo Pro, an AI-powered short content creation and video editing platform using Next JS and TypeScript, improving user engagement by 40%",
+      "Implemented key features including automatic highlights, emoji suggestions, and responsive video templates that enhanced the content creation workflow",
+      "Collaborated with UX designers to create an intuitive interface for AI-driven tools like auto-captioning and multilingual subtitle generation",
     ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UI/UX"],
   },
@@ -33,9 +34,9 @@ const experiences: Experience[] = [
     position: "Full Stack Developer",
     duration: "Sep 2024 - Nov 2024",
     description: [
-      "Developed and maintained multiple client-facing web applications using React and TypeScript",
-      "Designed and implemented RESTful APIs using Express.js and MongoDB",
-      "Collaborated with UX designers to implement responsive and accessible user interfaces",
+      "Developed and enhanced ResourcePlan's workflow management platform for architecture and engineering firms using Next JS and TypeScript",
+      "Built interactive dashboards and data visualization components while implementing RESTful APIs using Express.js and MongoDB",
+      "Designed both frontend interfaces and backend services for critical features including project budgeting, staff scheduling, and revenue forecasting tools",
     ],
     technologies: [
       "Next.js",
@@ -53,9 +54,9 @@ const experiences: Experience[] = [
     position: "Frontend Developer",
     duration: "June 2024 - July 2024",
     description: [
-      "Developed and maintained multiple client-facing web applications using React and TypeScript",
-      "Designed and implemented RESTful APIs using Express.js and MongoDB",
-      "Collaborated with UX designers to implement responsive and accessible user interfaces",
+      "Developed responsive and user-centric frontend interfaces for mobile and web applications using React and TypeScript",
+      "Created intuitive UI components and interactive features that enhanced user experience across iOS and Android platforms",
+      "Collaborated with UX designers to implement accessible interfaces following the company's user-centric design approach",
     ],
     technologies: [
       "Next.js",
@@ -72,9 +73,9 @@ const experiences: Experience[] = [
     position: "Full Stack Developer",
     duration: "Dec 2023 - Jan 2024",
     description: [
-      "Developed and maintained multiple client-facing web applications using React and TypeScript",
-      "Designed and implemented RESTful APIs using Express.js and MongoDB",
-      "Collaborated with UX designers to implement responsive and accessible user interfaces",
+      "Developed full-stack web applications and digital marketing solutions using React, Next.js, and Node.js technologies",
+      "Built custom CMS platforms and e-commerce solutions with RESTful APIs using Express.js and MongoDB",
+      "Collaborated with the digital marketing team to integrate analytics tools and optimize web performance for improved SEO results",
     ],
     technologies: [
       "React",
@@ -100,7 +101,7 @@ export function ExperienceSection() {
     <section id="experience" className="pt-10">
       <div className="space-y-8">
         <div className="flex flex-col items-start justify-start gap-5">
-          <HeadingBadge title="Experience" />
+          <HeadingBadge title="Experience" icon={<Briefcase size={14} />} />
           <div className="space-y-2">
             <h3 className="text-3xl font-semibold">
               Work{" "}
