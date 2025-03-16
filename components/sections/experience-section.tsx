@@ -130,8 +130,8 @@ export function ExperienceSection() {
               disableScale={true}
             >
               <div className="space-y-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="space-y-1">
+                <div className="flex xs:flex-row flex-col items-start justify-between gap-4">
+                  <section className="space-y-1">
                     <div className="flex items-center gap-2">
                       <h3 className="text-lg font-medium text-[#08090a] dark:text-white">
                         {experience.position}
@@ -152,11 +152,11 @@ export function ExperienceSection() {
                       <Building2 className="w-4 h-4" />
                       <span>{experience.company}</span>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 text-sm">
+                  </section>
+                  <section className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 text-sm">
                     <Calendar className="w-4 h-4" />
                     <span>{experience.duration}</span>
-                  </div>
+                  </section>
                 </div>
 
                 <div

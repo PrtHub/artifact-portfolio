@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface MobileNavProps {
   isOpen?: boolean;
@@ -23,7 +26,14 @@ const MobileNav = ({
     { id: "contact", label: "Contact" },
   ],
 }: MobileNavProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const scrollToSection = (id: string) => {
+    if (!mounted) return;
     const element = document.getElementById(id);
     if (!element) return;
 
@@ -40,6 +50,11 @@ const MobileNav = ({
     onClose?.();
   };
 
+  // Render nothing during SSR to avoid hydration mismatch
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       {/* Backdrop */}
@@ -54,7 +69,7 @@ const MobileNav = ({
       {/* Menu */}
       <div
         className={cn(
-          "fixed top-20 right-3 h-fit w-72 rounded-sm z-50 shadow-2xl sm:hidden flex flex-col mt-1 overflow-hidden",
+          "fixed top-20 right-3 h-fit w-72 rounded-sm z-50 shadow-2xl sm:hidden flex flex-col overflow-hidden",
           "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50",
           "transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]",
           isOpen

@@ -38,8 +38,15 @@ export function Navbar({
   const [scrolled, setScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
@@ -86,9 +93,10 @@ export function Navbar({
     // Run once on mount to set initial active section
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections, activeSection]);
+  }, [sections, activeSection, mounted]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!mounted) return;
     const nav = e.currentTarget;
     const rect = nav.getBoundingClientRect();
     setMousePosition({
@@ -98,6 +106,7 @@ export function Navbar({
   };
 
   const scrollToSection = (id: string) => {
+    if (!mounted) return;
     const element = document.getElementById(id);
     if (!element) return;
 
@@ -114,11 +123,36 @@ export function Navbar({
     setActiveSection(id);
   };
 
+  // Render a placeholder during SSR to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <nav
+        className={cn(
+          "fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
+          "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/30"
+        )}
+      >
+        <div className="flex-shrink-0 relative">
+          <div className="w-9 h-9 rounded-full bg-[#08090a] dark:bg-emerald-600"></div>
+        </div>
+        <div className="hidden sm:flex items-center space-x-1">
+          {sections.map((section) => (
+            <div
+              key={section.id}
+              className="px-3 py-1.5 text-sm rounded-full"
+            ></div>
+          ))}
+        </div>
+        <div className="sm:hidden relative z-50 w-10 h-10"></div>
+      </nav>
+    );
+  }
+
   return (
     <>
       <nav
         className={cn(
-          "fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
+          "fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[670px] py-2 px-4 rounded-sm transition-all duration-300 overflow-hidden",
           scrolled
             ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 shadow-lg"
             : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-sm border border-gray-200/60 dark:border-gray-800/30"
