@@ -19,7 +19,7 @@ export function IntroSection() {
             experiences
           </p>
 
-          <p className="text-sm sm:text-base font-medium text-[#737373] dark:text-[#A1A1AA] max-w-2xl">
+          <p className="text-sm sm:text-base font-normal text-[#737373] dark:text-[#A1A1AA] max-w-2xl">
             I specialize in building web apps with{" "}
             <span className="text-[#08090a] dark:text-emerald-500">
               Next.js, React, TypeScript, Tailwind CSS, Node.js and more.

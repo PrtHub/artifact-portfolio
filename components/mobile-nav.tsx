@@ -126,7 +126,7 @@ const MobileNav = ({
                 </div>
 
                 {/* Content */}
-                <span className="relative z-10 font-medium transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-black dark:group-hover:text-white">
+                <span className="relative z-10 font-normal transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-black dark:group-hover:text-white">
                   {section.label}
                 </span>
 

@@ -198,8 +198,8 @@ export function Navbar({
               className={cn(
                 "px-3 py-1.5 text-sm rounded-full transition-all duration-300 relative overflow-hidden",
                 activeSection === section.id
-                  ? "text-black dark:text-white bg-gray-100 dark:bg-[#191a1a] font-medium"
-                  : "text-[#737373] dark:text-[#A1A1AA] hover:text-black dark:hover:text-white"
+                  ? "text-black dark:text-white bg-gray-100 dark:bg-[#191a1a] font-normal"
+                  : "text-[#737373] dark:text-[#A1A1AA] hover:text-black dark:hover:text-white font-normal"
               )}
               onClick={(e) => {
                 e.preventDefault();
