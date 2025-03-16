@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import HeadingBadge from "@/components/heading-badge";
 import { IconBrandNextjs } from "@tabler/icons-react";
 import { DiRedis } from "react-icons/di";
@@ -106,6 +107,15 @@ const SkillTag = ({ name, icon }: Skill) => {
 
 export function SkillsSection() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // For server-side rendering, use a default background that works for both themes
+  const defaultBackground = `radial-gradient(circle at center, rgba(128, 128, 128, 0.03) 0%, rgba(128, 128, 128, 0.06) 35%, transparent 70%)`;
+
   return (
     <section
       id="skills"
@@ -163,10 +173,11 @@ export function SkillsSection() {
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{
-                background:
-                  theme === "dark"
+                background: mounted
+                  ? theme === "dark"
                     ? `radial-gradient(circle at center, rgba(34, 197, 94, 0.03) 0%, rgba(34, 197, 94, 0.06) 35%, transparent 70%)`
-                    : `radial-gradient(circle at center, rgba(8, 9, 10, 0.03) 0%, rgba(8, 9, 10, 0.06) 35%, transparent 70%)`,
+                    : `radial-gradient(circle at center, rgba(8, 9, 10, 0.03) 0%, rgba(8, 9, 10, 0.06) 35%, transparent 70%)`
+                  : defaultBackground,
               }}
             />
             <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#08090a]/30 dark:via-emerald-500/30 to-transparent scale-x-0 group-hover:scale-x-100 opacity-0 group-hover:opacity-100 transition-all duration-500" />

@@ -110,9 +110,10 @@ export function SpotlightCard({
   };
 
   // Determine which gradient color to use based on the current theme
-  const currentGradientColor = theme === "light" && lightGradientColor
-    ? lightGradientColor
-    : gradientColor;
+  const currentGradientColor =
+    theme === "light" && lightGradientColor
+      ? lightGradientColor
+      : gradientColor;
 
   return (
     <div
@@ -132,34 +133,38 @@ export function SpotlightCard({
       {/* Main Spotlight */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300"
-        style={{
-          opacity,
-          background: getSpotlightBackground(
-            position,
-            spotlightSize,
-            spotlightBlur
-          ),
-          ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent ${
-            (1 - spotlightOpacity) * 100
-          }%)`,
-        } as React.CSSProperties}
+        style={
+          {
+            opacity,
+            background: getSpotlightBackground(
+              position,
+              spotlightSize,
+              spotlightBlur
+            ),
+            ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent ${
+              (1 - spotlightOpacity) * 100
+            }%)`,
+          } as React.CSSProperties
+        }
       />
 
       {/* Secondary Spotlight */}
       {multiSpotlight && (
         <div
           className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300"
-          style={{
-            opacity: opacity * 0.7,
-            background: getSpotlightBackground(
-              secondaryPosition,
-              spotlightSize * 0.8,
-              spotlightBlur
-            ),
-            ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent ${
-              (1 - spotlightOpacity * 0.8) * 100
-            }%)`,
-          } as React.CSSProperties}
+          style={
+            {
+              opacity: opacity * 0.7,
+              background: getSpotlightBackground(
+                secondaryPosition,
+                spotlightSize * 0.8,
+                spotlightBlur
+              ),
+              ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent ${
+                (1 - spotlightOpacity * 0.8) * 100
+              }%)`,
+            } as React.CSSProperties
+          }
         />
       )}
 
@@ -167,11 +172,13 @@ export function SpotlightCard({
       {glowEffect && (
         <div
           className="pointer-events-none absolute -inset-px opacity-0 blur-xl transition-opacity duration-300"
-          style={{
-            opacity: opacity * glowOpacity,
-            background: getSpotlightBackground(position, glowSize),
-            ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent 15%)`,
-          } as React.CSSProperties}
+          style={
+            {
+              opacity: opacity * glowOpacity,
+              background: getSpotlightBackground(position, glowSize),
+              ["--spotlight-color" as string]: `color-mix(in srgb, var(--gradient-color, ${currentGradientColor}), transparent 15%)`,
+            } as React.CSSProperties
+          }
         />
       )}
 

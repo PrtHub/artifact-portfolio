@@ -1,6 +1,7 @@
+import { Mail } from "lucide-react";
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export function ContactSection() {
   return (
@@ -56,7 +57,7 @@ export function ContactSection() {
                   className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Twitter className="relative w-5 h-5" />
+                  <FaXTwitter className="relative w-5 h-5" />
                 </a>
 
                 <a
@@ -66,7 +67,7 @@ export function ContactSection() {
                   className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Github className="relative w-5 h-5" />
+                  <FaGithub className="relative w-5 h-5" />
                 </a>
 
                 <a
@@ -76,7 +77,7 @@ export function ContactSection() {
                   className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Linkedin className="relative w-5 h-5" />
+                  <FaLinkedin className="relative w-5 h-5" />
                 </a>
               </div>
             </div>
