@@ -29,7 +29,8 @@ const projects: Project[] = [
     description:
       "Helper is a Platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
     imageUrl: "",
-    videoUrl: "/projects/helper.mp4",
+    videoUrl:
+      "https://videos.pexels.com/video-files/31204013/13328535_1920_1080_60fps.mp4",
     tags: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
     link: "https://helpernet.vercel.app",
   },
@@ -39,7 +40,8 @@ const projects: Project[] = [
     description:
       "Bookwise is a production-grade platform featuring a public-facing app and an admin interface. It offers advanced functionalities like seamless book borrowing with reminders and receipts, robust user management, automated workflows, and a modern, optimized tech stack for real-world scalability.",
     imageUrl: "",
-    videoUrl: "/projects/bookwise.mp4",
+    videoUrl:
+      "https://videos.pexels.com/video-files/31203981/13328517_1920_1080_60fps.mp4",
     tags: ["Next.js", "Upstash", "NeonDB", "Drizzle"],
     link: "https://bookwise-lyart.vercel.app",
   },
