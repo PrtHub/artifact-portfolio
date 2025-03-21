@@ -29,8 +29,7 @@ const projects: Project[] = [
     description:
       "Helper is a Platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
     imageUrl: "",
-    videoUrl:
-      "https://videos.pexels.com/video-files/31204013/13328535_1920_1080_60fps.mp4",
+    videoUrl: "/projects/helper.mp4",
     tags: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
     link: "https://helpernet.vercel.app",
   },
